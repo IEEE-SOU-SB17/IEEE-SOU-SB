@@ -31,11 +31,13 @@ export default function TeamFaculty() {
           where("type", "==", "faculty"),
           orderBy("createdAt", "desc")
         );
+
         const snapshot = await getDocs(q);
         const data: Member[] = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
         })) as Member[];
+
         setFacultyMembers(data);
       } catch (error) {
         console.error("Error fetching faculty members:", error);
@@ -66,6 +68,7 @@ export default function TeamFaculty() {
             </p>
           </div>
 
+          {/* Search Bar */}
           <div className="flex justify-center mb-10">
             <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
@@ -81,67 +84,61 @@ export default function TeamFaculty() {
 
           {/* Founding Member */}
           {foundingMember && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4 text-center">Founding Faculty Member</h2>
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-white glass rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
-                  <div className="flex flex-col md:flex-row items-center p-8">
-                    <img
-                      src={foundingMember.image}
-                      alt={foundingMember.name}
-                      className="w-36 h-36 rounded-full object-cover mb-4 md:mb-0 md:mr-6 border-4 border-primary"
-                    />
-                    <div className="text-center md:text-left">
-                      <div className="flex items-center justify-center md:justify-start mb-2">
-                        <h3 className="text-2xl font-bold">{foundingMember.name}</h3>
-                        <a
-                          href={foundingMember.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ml-2 text-primary hover:text-primary/80"
-                        >
-                          <Linkedin className="h-5 w-5" />
-                        </a>
-                      </div>
-                      <p className="text-base"><strong>Designation:</strong> {foundingMember.designation}</p>
-                      <p className="text-base"><strong>Department:</strong> {foundingMember.department}</p>
-                      <p className="mt-3 text-sm text-muted-foreground">
-                        Founding member of IEEE SOU SB who has laid the strong foundation for our growth and continues to inspire us.
-                      </p>
-                    </div>
+            <div className="mb-16">
+              <h2 className="text-3xl font-semibold mb-6 text-center">Founding Faculty Member</h2>
+              <div className="bg-white glass rounded-xl shadow-xl transition-all duration-300 overflow-hidden p-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center">
+                <img
+                  src={foundingMember.image}
+                  alt={foundingMember.name}
+                  className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-10 border-4 border-primary"
+                />
+                <div className="text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start mb-3">
+                    <h3 className="text-3xl font-bold">{foundingMember.name}</h3>
+                    <a
+                      href={foundingMember.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-3 text-primary hover:text-primary/80"
+                    >
+                      <Linkedin className="h-6 w-6" />
+                    </a>
                   </div>
+                  <p className="text-lg mb-2"><strong>Designation:</strong> {foundingMember.designation}</p>
+                  <p className="text-lg mb-4"><strong>Department:</strong> {foundingMember.department}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Founding member of IEEE SOU SB who laid the foundation and continues to guide us with wisdom and leadership.
+                  </p>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Other Faculty Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Other Members */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {otherMembers.map(member => (
               <div
                 key={member.id}
-                className="bg-white glass rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center text-center"
               >
-                <div className="p-6 flex flex-col items-center text-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mb-3 border-2 border-muted"
-                  />
-                  <div className="flex items-center justify-center mb-1">
-                    <h3 className="font-bold text-lg">{member.name}</h3>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 text-primary hover:text-primary/80"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                  </div>
-                  <p className="text-sm mb-1"><strong>Designation:</strong> {member.designation}</p>
-                  <p className="text-sm text-muted-foreground"><strong>Department:</strong> {member.department}</p>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-muted"
+                />
+                <div className="flex items-center justify-center mb-2">
+                  <h3 className="font-semibold text-lg">{member.name}</h3>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-2 text-primary hover:text-primary/80"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
                 </div>
+                <p className="text-sm mb-1"><strong>Designation:</strong> {member.designation}</p>
+                <p className="text-sm text-muted-foreground"><strong>Department:</strong> {member.department}</p>
               </div>
             ))}
           </div>
