@@ -88,8 +88,8 @@ export default function TeamFaculty() {
               <h2 className="text-3xl font-semibold mb-6 text-center">Founding Faculty Member</h2>
               <div className="bg-white glass rounded-xl shadow-xl transition-all duration-300 overflow-hidden p-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center">
                 <img
-                  src={http://ieee.socet.edu.in/wp-content/uploads/2025/05/satviksir.jpg}
-                  alt={Dr. Satvik Khara}
+                  src= http://ieee.socet.edu.in/wp-content/uploads/2025/05/satviksir.jpg 
+                  alt= Dr. Satvik Khara
                   className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-10 border-4 border-primary"
                 />
                 <div className="text-center md:text-left">
