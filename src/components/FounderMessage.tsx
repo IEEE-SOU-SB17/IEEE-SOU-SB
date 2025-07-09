@@ -75,7 +75,7 @@ export default function FounderMessage() {
                 </blockquote>
                 <div className="text-right">
                   <p className="font-semibold text-lg">Dr. Satvik Khara</p>
-                  <p className="text-muted-foreground">Head, Department of Computer Engineering</p>
+                  <p className="text-muted-foreground">Dean, College of Technology</p>
                 </div>
               </div>
             </div>
