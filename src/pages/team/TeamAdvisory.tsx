@@ -60,7 +60,7 @@ export default function TeamAdvisory() {
       <main className="flex-grow pt-24 pb-16 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Advisory Board</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Student Advisory Board</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Meet the esteemed advisory board of IEEE SOU Student Branch.
             </p>
