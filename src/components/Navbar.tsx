@@ -39,7 +39,7 @@ const NAV_ITEMS: NavItem[] = [
     title: "Team",
     children: [
       { title: "Faculty Advisor", href: "/team/faculty-advisor" },
-      { title: "Advisory Board", href: "/team/advisory-board" },
+      { title: "Student Advisory Board", href: "/team/advisory-board" },
       { title: "Executive Members", href: "/team/executive-members" },
       { title: "Core Members", href: "/team/core-members" },
       { title: "Members", href: "/team/members" },
