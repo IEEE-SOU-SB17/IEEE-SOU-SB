@@ -8,12 +8,12 @@ import { cn } from "@/lib/utils";
 const SAMPLE_EVENTS: Event[] = [
   {
     id: "1",
-    title: "AI CONCLAVE 2.0",
-    description: "Learn about the fundamentals of Artificial Intelligence and its applications in today's world. Add more description here",
-    date: "JULY 11, 2025",
-    time: "09:30 AM - 05:30 PM",
-    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-06-27-at-19.26.45_4a5d3045.jpg",
-    link: "https://aiconclave2.netlify.app"
+    title: "CIPHER X",
+    description: "Dive into hands-on experiences, mastering encryption techniques and decryption tools with an electrifying 5-day cybersecurity bootcamp",
+    date: "JULY 29 - AUGUST 2, 2025",
+    time: "01:00 PM - 04:00 PM",
+    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-19-at-16.45.03_f6e21b03.jpg",
+    link: ""
   }
 ];
 
