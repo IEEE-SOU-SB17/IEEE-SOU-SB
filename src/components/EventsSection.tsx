@@ -12,7 +12,7 @@ const SAMPLE_EVENTS: Event[] = [
     description: "Dive into hands-on experiences, mastering encryption techniques and decryption tools with an electrifying 5-day cybersecurity bootcamp",
     date: "JULY 29 - AUGUST 2, 2025",
     time: "01:00 PM - 04:00 PM",
-    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-19-at-16.45.03_f6e21b03.jpg",
+    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/07/Untitled-design-1.png",
     link: ""
   }
 ];
