@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 const SAMPLE_EVENTS: Event[] = [
   {
     id: "1",
-    title: "CIPHER X",
-    description: "Dive into hands-on experiences, mastering encryption techniques and decryption tools with an electrifying 5-day cybersecurity bootcamp",
-    date: "JULY 29 - AUGUST 2, 2025",
-    time: "01:00 PM - 04:00 PM",
-    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/07/Untitled-design-1.png",
+    title: "AI Pe Charcha",
+    description: "",
+    date: "August 12, 2025",
+    time: "10:00 Onwards",
+    image: "http://ieee.socet.edu.in/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-05-at-11.30.48_8421c034.jpg",
     link: ""
   }
 ];
