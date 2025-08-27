@@ -95,7 +95,7 @@ export default function TeamAdvisory() {
                     </div>
                   </div>
                   <div className="space-y-1 text-sm">
-                    <p><span className="font-medium">Current profession:</span> {member.education}</p>
+                    <p><span className="font-medium">Current Profession:</span> {member.education}</p>
                     {/* <p><span className="font-medium">Designation:</span> {member.designation}</p> */}
                     {/* <p><span className="font-medium">Enrolled:</span> {member.createdAt?.toDate()?.getFullYear()}</p> */}
                   </div>
