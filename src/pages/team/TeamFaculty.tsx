@@ -33,7 +33,7 @@ export default function TeamFaculty() {
         );
 
         const snapshot = await getDocs(q);
-        const data: Member[] = snapshot.docs.map(doc => ({
+        const data: Member[] = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         })) as Member[];
@@ -47,14 +47,15 @@ export default function TeamFaculty() {
     fetchFacultyMembers();
   }, []);
 
-  const filtered = facultyMembers.filter(member =>
-    member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    member.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    member.designation.toLowerCase().includes(searchTerm.toLowerCase())
+  const filtered = facultyMembers.filter(
+    (member) =>
+      member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      member.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      member.designation.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const foundingMember = filtered.find(member => member.founding);
-  const otherMembers = filtered.filter(member => !member.founding);
+  const foundingMember = filtered.find((member) => member.founding);
+  const otherMembers = filtered.filter((member) => !member.founding);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -62,8 +63,10 @@ export default function TeamFaculty() {
       <main className="flex-grow pt-24 pb-16 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Faculty Members</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+              Faculty Members
+            </h1>
+            <p className="text-lg text-muted-foreground dark:text-gray-400 max-w-2xl mx-auto">
               Meet the faculty guiding IEEE SOU Student Branch.
             </p>
           </div>
@@ -71,7 +74,7 @@ export default function TeamFaculty() {
           {/* Search Bar */}
           <div className="flex justify-center mb-10">
             <div className="relative w-full max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground dark:text-gray-400 h-4 w-4" />
               <Input
                 type="text"
                 placeholder="Search faculty..."
@@ -85,8 +88,15 @@ export default function TeamFaculty() {
           {/* Founding Member */}
           {foundingMember && (
             <div className="mb-16">
-              <h2 className="text-3xl font-semibold mb-6 text-center">Founding Faculty Member</h2>
-              <div className="bg-white glass rounded-xl shadow-xl transition-all duration-300 overflow-hidden p-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center">
+              <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900 dark:text-white">
+                Founding Faculty Member
+              </h2>
+              <div
+                className="bg-white dark:bg-gray-900 glass rounded-xl shadow-xl 
+                           dark:hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] 
+                           transition-all duration-300 overflow-hidden p-10 
+                           max-w-5xl mx-auto flex flex-col md:flex-row items-center"
+              >
                 <img
                   src={foundingMember.image}
                   alt={foundingMember.name}
@@ -94,7 +104,9 @@ export default function TeamFaculty() {
                 />
                 <div className="text-center md:text-left">
                   <div className="flex items-center justify-center md:justify-start mb-3">
-                    <h3 className="text-3xl font-bold">{foundingMember.name}</h3>
+                    <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
+                      {foundingMember.name}
+                    </h3>
                     <a
                       href={foundingMember.linkedin}
                       target="_blank"
@@ -104,10 +116,15 @@ export default function TeamFaculty() {
                       <Linkedin className="h-6 w-6" />
                     </a>
                   </div>
-                  <p className="text-lg mb-2"><strong>Designation:</strong> {foundingMember.designation}</p>
-                  <p className="text-lg mb-4"><strong>Department:</strong> {foundingMember.department}</p>
-                  <p className="text-sm text-muted-foreground">
-                    Founding member of IEEE SOU SB who laid the foundation and continues to guide us with wisdom and leadership.
+                  <p className="text-lg mb-2 text-gray-700 dark:text-gray-300">
+                    <strong>Designation:</strong> {foundingMember.designation}
+                  </p>
+                  <p className="text-lg mb-4 text-gray-700 dark:text-gray-300">
+                    <strong>Department:</strong> {foundingMember.department}
+                  </p>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400">
+                    Founding member of IEEE SOU SB who laid the foundation and
+                    continues to guide us with wisdom and leadership.
                   </p>
                 </div>
               </div>
@@ -116,18 +133,22 @@ export default function TeamFaculty() {
 
           {/* Other Members */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {otherMembers.map(member => (
+            {otherMembers.map((member) => (
               <div
                 key={member.id}
-                className="bg-white glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col items-center text-center"
+                className="bg-white dark:bg-gray-900 glass rounded-xl overflow-hidden shadow-md hover:shadow-lg 
+                           dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] 
+                           transition-all duration-300 p-6 flex flex-col items-center text-center"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-muted"
+                  className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-muted dark:border-gray-700"
                 />
                 <div className="flex items-center justify-center mb-2">
-                  <h3 className="font-semibold text-lg">{member.name}</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
+                    {member.name}
+                  </h3>
                   <a
                     href={member.linkedin}
                     target="_blank"
@@ -137,8 +158,12 @@ export default function TeamFaculty() {
                     <Linkedin className="h-4 w-4" />
                   </a>
                 </div>
-                <p className="text-sm mb-1"><strong>Designation:</strong> {member.designation}</p>
-                <p className="text-sm text-muted-foreground"><strong>Department:</strong> {member.department}</p>
+                <p className="text-sm mb-1 text-gray-700 dark:text-gray-300">
+                  <strong>Designation:</strong> {member.designation}
+                </p>
+                <p className="text-sm text-muted-foreground dark:text-gray-400">
+                  <strong>Department:</strong> {member.department}
+                </p>
               </div>
             ))}
           </div>
