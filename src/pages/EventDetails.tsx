@@ -65,7 +65,7 @@ const EventDetails = () => {
     <div className="min-h-screen bg-blue-50">
       <div className="max-w-4xl mx-auto pt-8 px-4 pb-16">
         <Button variant="outline" className="mb-6" asChild>
-          <Link to="/" className="flex items-center gap-2 text-black">
+          <Link to="/" className="flex items-center gap-2 text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Link>
