@@ -1,34 +1,33 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, MapPin, Mail, Phone, Twitter } from "lucide-react";
 import { SocialLink } from "@/types";
-import {useTheme} from "@/lib/theme-provider" 
+import { useTheme } from "@/lib/theme-provider";
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
     platform: "Instagram",
     url: "https://www.instagram.com/ieee_silveroakuni/",
-    icon: Instagram
+    icon: Instagram,
   },
   {
     platform: "Twitter",
     url: "https://twitter.com/IEEE_SilverOak",
-    icon: Twitter
+    icon: Twitter,
   },
   {
     platform: "Facebook",
     url: "https://www.facebook.com/IEEESilverOakUni",
-    icon: Facebook
+    icon: Facebook,
   },
   {
     platform: "LinkedIn",
     url: "https://www.linkedin.com/company/ieee-silveroakuni/",
-    icon: Linkedin
-  }
+    icon: Linkedin,
+  },
 ];
 
 export default function Footer() {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   return (
     <footer className="bg-primary/5 py-6 md:py-8">
@@ -37,20 +36,21 @@ export default function Footer() {
           {/* Logo and description */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              {/* IMPORTANT: Replace this with dark mode logo when available */}
-              <img
-                src={
-                  theme === "dark"
-                  ? "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Group-1.png"
-                  : "http://ieee.socet.edu.in/wp-content/uploads/2025/03/ieee_sou_sb_logo-removebg-preview.png"
-                }
-                alt="IEEE SOU SB Logo"
-                className="w-64 md:w-64 h-auto"
-              />
+              <div className="w-64 h-20 md:w-64 md:h-20 flex items-center justify-center">
+                <img
+                  src={
+                    theme === "dark"
+                      ? "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Group-1.png"
+                      : "http://ieee.socet.edu.in/wp-content/uploads/2025/03/ieee_sou_sb_logo-removebg-preview.png"
+                  }
+                  alt="IEEE SOU SB Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </Link>
             <p className="text-xs md:text-sm text-muted-foreground max-w-md">
-              Silver Oak University IEEE SB aims to give an interactive platform for students to 
-              develop professional and technical abilities. Since the start, it is successfully 
+              Silver Oak University IEEE SB aims to give an interactive platform for students to
+              develop professional and technical abilities. Since the start, it is successfully
               organizing various events with well-defined subjects.
             </p>
           </div>
@@ -64,19 +64,19 @@ export default function Footer() {
                 <span className="text-xs md:text-sm text-muted-foreground">+91 79660 46304</span>
               </div>
               <div className="flex items-center">
-  <Mail className="h-4 w-4 md:h-5 md:w-5 mr-3 text-primary flex-shrink-0" />
-  <div className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors space-y-1">
-    <a href="mailto:ieee.fbc@socet.edu.in" className="block hover:text-primary">
-      ieee.fbc@socet.edu.in
-    </a>
-    <a href="mailto:ieee.sc@socet.edu.in" className="block hover:text-primary">
-      ieee.sc@socet.edu.in
-    </a>
-    <a href="mailto:ieee.tr@socet.edu.in" className="block hover:text-primary">
-      ieee.tr@socet.edu.in
-    </a>
-  </div>
-</div>
+                <Mail className="h-4 w-4 md:h-5 md:w-5 mr-3 text-primary flex-shrink-0" />
+                <div className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors space-y-1">
+                  <a href="mailto:ieee.fbc@socet.edu.in" className="block hover:text-primary">
+                    ieee.fbc@socet.edu.in
+                  </a>
+                  <a href="mailto:ieee.sc@socet.edu.in" className="block hover:text-primary">
+                    ieee.sc@socet.edu.in
+                  </a>
+                  <a href="mailto:ieee.tr@socet.edu.in" className="block hover:text-primary">
+                    ieee.tr@socet.edu.in
+                  </a>
+                </div>
+              </div>
 
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 text-primary flex-shrink-0 mt-0.5" />
