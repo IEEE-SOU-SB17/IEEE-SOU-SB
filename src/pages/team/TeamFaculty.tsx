@@ -87,24 +87,24 @@ export default function TeamFaculty() {
 
           {/* Founding Member */}
           {foundingMember && (
-            <div className="mb-16">
-              <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900 dark:text-white">
-                Founding Faculty Member
+            <div className="mb-12">
+              <h2 className="text-3xl font-semibold mb-8 text-center text-gray-900 dark:text-white">
+                Branch Counselor & Founding Member
               </h2>
               <div
                 className="bg-white dark:bg-gray-900 glass rounded-xl shadow-xl 
-                           dark:hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] 
-                           transition-all duration-300 overflow-hidden p-10 
-                           max-w-5xl mx-auto flex flex-col md:flex-row items-center"
+                           dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] 
+                           transition-all duration-300 overflow-hidden p-8 
+                           max-w-3xl mx-auto flex flex-col sm:flex-row items-center text-center sm:text-left gap-8"
               >
                 <img
                   src={foundingMember.image}
                   alt={foundingMember.name}
-                  className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-10 border-4 border-primary"
+                  className="w-36 h-36 rounded-full object-cover border-4 border-primary flex-shrink-0"
                 />
-                <div className="text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start mb-3">
-                    <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
+                <div>
+                  <div className="flex items-center justify-center sm:justify-start mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       {foundingMember.name}
                     </h3>
                     <a
@@ -116,15 +116,11 @@ export default function TeamFaculty() {
                       <Linkedin className="h-6 w-6" />
                     </a>
                   </div>
-                  <p className="text-lg mb-2 text-gray-700 dark:text-gray-300">
-                    <strong>Designation:</strong> {foundingMember.designation}
-                  </p>
-                  <p className="text-lg mb-4 text-gray-700 dark:text-gray-300">
-                    <strong>Department:</strong> {foundingMember.department}
+                  <p className="text-base mb-2 text-gray-600 dark:text-gray-300">
+                    {foundingMember.designation}
                   </p>
                   <p className="text-sm text-muted-foreground dark:text-gray-400">
-                    Founding member of IEEE SOU SB who laid the foundation and
-                    continues to guide us with wisdom and leadership.
+                    {foundingMember.department}
                   </p>
                 </div>
               </div>
@@ -132,40 +128,47 @@ export default function TeamFaculty() {
           )}
 
           {/* Other Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {otherMembers.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white dark:bg-gray-900 glass rounded-xl overflow-hidden shadow-md hover:shadow-lg 
-                           dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] 
-                           transition-all duration-300 p-6 flex flex-col items-center text-center"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-muted dark:border-gray-700"
-                />
-                <div className="flex items-center justify-center mb-2">
-                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
-                    {member.name}
-                  </h3>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-2 text-primary hover:text-primary/80"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
+          <div className="mt-16">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-gray-900 dark:text-white">
+              Faculty Advisors
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {otherMembers.map((member) => (
+                <div
+                  key={member.id}
+                  className="bg-white dark:bg-gray-900 glass rounded-xl overflow-hidden shadow-md hover:shadow-lg 
+                             dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] 
+                             transition-all duration-300 p-6 flex flex-col items-center text-center h-full"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full object-cover mb-4 border-2 border-muted dark:border-gray-700"
+                  />
+                  <div className="flex items-center justify-center mb-2">
+                    <h3 className="font-semibold text-xl text-gray-900 dark:text-white">
+                      {member.name}
+                    </h3>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 text-primary hover:text-primary/80"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </div>
+                  <div className="flex-grow">
+                    <p className="text-sm mb-1 text-gray-700 dark:text-gray-300">
+                      {member.designation}
+                    </p>
+                  </div>
+                  <p className="text-xs text-muted-foreground dark:text-gray-400 mt-2">
+                    {member.department}
+                  </p>
                 </div>
-                <p className="text-sm mb-1 text-gray-700 dark:text-gray-300">
-                  <strong>Designation:</strong> {member.designation}
-                </p>
-                <p className="text-sm text-muted-foreground dark:text-gray-400">
-                  <strong>Department:</strong> {member.department}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </main>
