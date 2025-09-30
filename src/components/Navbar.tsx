@@ -100,7 +100,7 @@ export default function Navbar() {
                 src={
                   theme === "dark"
                     ? "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Group-1.png"
-                    : "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Logo__2_-removebg-preview.png"
+                    : "http://ieee.socet.edu.in/wp-content/uploads/2025/09/N_Wedge-removebg-preview.png"
                 }
                 alt="IEEE SOU SB Logo"
                 className="h-9 w-auto md:h-16 object-contain"
