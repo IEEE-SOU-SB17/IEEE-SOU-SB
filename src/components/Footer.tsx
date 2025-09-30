@@ -41,7 +41,7 @@ export default function Footer() {
                   src={
                     theme === "dark"
                       ? "http://ieee.socet.edu.in/wp-content/uploads/2025/04/Group-1.png"
-                      : "http://ieee.socet.edu.in/wp-content/uploads/2025/03/ieee_sou_sb_logo-removebg-preview.png"
+                      : "http://ieee.socet.edu.in/wp-content/uploads/2025/09/N_Wedge-removebg-preview.png"
                   }
                   alt="IEEE SOU SB Logo"
                   className="w-full h-full object-contain"
