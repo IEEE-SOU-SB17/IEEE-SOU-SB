@@ -45,7 +45,7 @@ const EventDetails = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-black">Loading event details...</p>
+        <p className="text-black dark:text-white">Loading event details...</p>
       </div>
     );
   }
@@ -53,7 +53,9 @@ const EventDetails = () => {
   if (!event) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-black mb-4">Event Not Found</h1>
+        <h1 className="text-2xl font-bold text-black dark:text-white mb-4">
+          Event Not Found
+        </h1>
         <Button asChild>
           <Link to="/">Back to Home</Link>
         </Button>
@@ -62,10 +64,11 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-blue-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto pt-8 px-4 pb-16">
         <Button variant="outline" className="mb-6" asChild>
-          <Link to="/" className="flex items-center gap-2 text-white">
+          {/* ✅ Works in both modes now */}
+          <Link to="/" className="flex items-center gap-2 text-black dark:text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Link>
@@ -73,7 +76,6 @@ const EventDetails = () => {
 
         {/* Image - Poster */}
         <div className="w-full overflow-hidden rounded-lg mb-8">
-          {/* <h2 className="text-xl font-semibold text-black mb-2">Event Poster</h2> */}
           <img
             src={event.imageUrl}
             alt={event.title}
@@ -82,26 +84,28 @@ const EventDetails = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-200 mb-4">
           {event.title}
         </h1>
 
         {/* Date and Location */}
         <div className="flex flex-wrap gap-4 mb-6">
-          <div className="flex items-center gap-2 text-black">
+          <div className="flex items-center gap-2 text-black dark:text-white">
             <CalendarIcon className="h-5 w-5" />
             <span>{event.date}</span>
           </div>
 
-          <div className="flex items-center gap-2 text-black">
+          <div className="flex items-center gap-2 text-black dark:text-white">
             <MapPinIcon className="h-5 w-5" />
             <span>{event.location}</span>
           </div>
         </div>
 
         {/* Description */}
-        <div className="prose max-w-none text-black">
-          <h2 className="text-2xl font-semibold text-black mb-4">Event Description</h2>
+        <div className="prose max-w-none text-black dark:text-gray-200">
+          <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">
+            Event Description
+          </h2>
           <div className="whitespace-pre-wrap">{event.description}</div>
         </div>
       </div>
