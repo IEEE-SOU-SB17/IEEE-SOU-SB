@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, MapPin, Mail, Phone, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MapPin, Mail, Phone } from "lucide-react";
 import { SocialLink } from "@/types";
 import { useTheme } from "@/lib/theme-provider";
+import { SiX } from "react-icons/si"; // X (Twitter new logo)
+import { SiThreads } from "react-icons/si"; // Threads logo
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -10,9 +12,9 @@ const SOCIAL_LINKS: SocialLink[] = [
     icon: Instagram,
   },
   {
-    platform: "Twitter",
+    platform: "X",
     url: "https://twitter.com/IEEE_SilverOak",
-    icon: Twitter,
+    icon: SiX,
   },
   {
     platform: "Facebook",
@@ -110,9 +112,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Follow us on Threads"
                 >
-                  <svg className="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.186 24h-.007c-3.581-.024-5.687-1.569-6.446-4.753C5.141 16.5 4.69 13.148 4.5 11.486c0-.24.219-.435.47-.435l.27.015c3.55.327 7.03-1.389 8.386-4.193.626-1.293.932-2.703.905-4.128C14.254 1.363 15.652 0 17.02 0h.942c1.127 0 2.152.747 2.48 1.86.473 1.602.454 3.214-.063 4.593-.81 2.146-2.107 3.932-3.692 5.235 0 0 .662 3.537 2.608 4.157.738.245 1.079 1.088.737 1.809-.334.7-1.14.985-1.826.638-2.878-1.43-3.115-5.251-3.328-7.447.031-.106.05-.216.05-.336 0-.643-.526-1.17-1.163-1.17-.638 0-1.162.527-1.162 1.17 0 .018 0 .035.002.054-.028 0-.028 9.95 5.872 9.95.168 0 .342-.012.512-.03.626-.073 1.21.372 1.282 1.01.072.65-.347 1.231-.97 1.303-.273.034-.565.054-.86.054z" />
-                  </svg>
+                  <SiThreads className="h-4 w-4 md:h-5 md:w-5" />
                 </a>
               </div>
             </div>
