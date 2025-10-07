@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, MapPin, Mail, Phone } from "lucide-react";
-import { SocialLink } from "@/types";
 import { useTheme } from "@/lib/theme-provider";
-import { SiX } from "react-icons/si"; // X (Twitter new logo)
-import { SiThreads } from "react-icons/si"; // Threads logo
+import { SiX, SiThreads } from "react-icons/si"; // ✅ Correct way to import both
+
+interface SocialLink {
+  platform: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -51,9 +55,9 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-xs md:text-sm text-muted-foreground max-w-md">
-              Silver Oak University IEEE SB aims to give an interactive platform for students to
-              develop professional and technical abilities. Since the start, it is successfully
-              organizing various events with well-defined subjects.
+              Silver Oak University IEEE SB aims to provide an interactive platform for students to
+              develop professional and technical abilities. Since its inception, it has successfully
+              organized numerous events with well-defined objectives.
             </p>
           </div>
 
@@ -83,8 +87,8 @@ export default function Footer() {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-xs md:text-sm text-muted-foreground">
-                  Silver Oak University, Nr. Bhavik Publications, Opp. Bhagwat Vidyapith, S.G.Highway,
-                  Ahmedabad, Gujarat - 382481
+                  Silver Oak University, Nr. Bhavik Publications, Opp. Bhagwat Vidyapith, S.G.
+                  Highway, Ahmedabad, Gujarat - 382481
                 </span>
               </div>
             </div>
