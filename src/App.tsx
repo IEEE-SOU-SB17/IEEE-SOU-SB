@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "@/lib/theme-provider"; // Make sure this is a valid path
-import { TooltipProvider } from "@/components/ui/tooltip"; // Ensure these components are available
-import { Toaster } from "@/components/ui/toaster"; // Ensure these components are available
-import { Toaster as Sonner } from "@/components/ui/sonner"; // Ensure these components are available
+import { ThemeProvider } from "@/lib/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+// Removed unused import: import { HashRouter as Router } from 'react-router-dom';
 
 // Main Pages
 import Index from "./pages/Index";
@@ -31,7 +32,7 @@ import TeamCore from "./pages/team/TeamCore";
 import TeamMembers from "./pages/team/TeamMembers";
 
 // Admin + Auth
-import Admin from "./pages/Admin"; // ✅ Single Admin page with all functionality
+import Admin from "./pages/Admin";
 import Authentication from "./components/Authentication";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -49,7 +50,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <HashRouter> {/* Changed from BrowserRouter to HashRouter */}
             <Routes>
               {/* Main Pages */}
               <Route path="/" element={<Index />} />
@@ -80,7 +81,7 @@ function App() {
                 path="/admin"
                 element={
                   <ProtectedRoute>
-                    <Admin /> {/* ✅ Includes Events, Awards, Members, Image URL */}
+                    <Admin />
                   </ProtectedRoute>
                 }
               />
@@ -92,7 +93,7 @@ function App() {
               {/* 404 Fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
